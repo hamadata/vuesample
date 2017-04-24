@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+./bin/setup
+```
 
-Things you may want to cover:
+```
+./bin/webpack-dev-server
+```
 
-* Ruby version
+```
+./bin/rails s
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+http://localhost:3000 にアクセス
