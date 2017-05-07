@@ -1,5 +1,6 @@
 import Vue from 'vue/dist/vue.esm'
 import App from './app.vue'
+import TurbolinksAdapter from 'vue-turbolinks';
 
 // register the grid component
 Vue.component('demo-grid', {
@@ -57,16 +58,22 @@ Vue.component('demo-grid', {
 })
 
 // bootstrap the demo
-var demo = new Vue({
-  el: '#demo',
-  data: {
-    searchQuery: '',
-    gridColumns: ['name', 'power'],
-    gridData: [
-      { name: 'Chuck Norris', power: Infinity },
-      { name: 'Bruce Lee', power: 9000 },
-      { name: 'Jackie Chan', power: 7000 },
-      { name: 'Jet Li', power: 8000 }
-    ]
+
+document.addEventListener('turbolinks:load', () => {
+  let element = document.getElementById("demo")
+  if (element != null) {
+		var demo = new Vue({
+			el: '#demo',
+			data: {
+				searchQuery: '',
+				gridColumns: ['name', 'power'],
+				gridData: [
+					{ name: 'Chuck Norris', power: Infinity },
+					{ name: 'Bruce Lee', power: 9000 },
+					{ name: 'Jackie Chan', power: 7000 },
+					{ name: 'Jet Li', power: 8000 }
+				]
+			}
+		})
   }
 })
